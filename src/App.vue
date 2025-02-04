@@ -9,8 +9,6 @@
 
     <section class="intro">
       <div class="intro-content">
-        <!-- Vue.js Logo from reliable CDN -->
-        <img src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.min.js" alt="Vue.js Logo" class="vue-logo"/>
         <h2>About Us</h2>
         <p>We combine the power of AI, scientific research, and Unix systems to drive innovation in machine learning and neurosymbolic AI. Explore our work and collaborate with us!</p>
       </div>
@@ -19,20 +17,14 @@
     <section class="images">
       <div class="image-container">
         <div class="image-card">
-          <!-- Science image (reliable source) -->
-          <img src="https://via.placeholder.com/500x300?text=Science+Image" alt="Science"/>
           <h3>Science</h3>
           <p>Explore the latest in research and scientific development.</p>
         </div>
         <div class="image-card">
-          <!-- AI image (reliable source) -->
-          <img src="https://via.placeholder.com/500x300?text=AI+Image" alt="AI"/>
           <h3>AI & Machine Learning</h3>
           <p>Building intelligent systems that learn and reason.</p>
         </div>
         <div class="image-card">
-          <!-- Unix image (reliable source) -->
-          <img src="https://via.placeholder.com/500x300?text=Unix+Image" alt="Unix"/>
           <h3>Unix & Systems</h3>
           <p>Utilizing Unix to power high-performance computing systems.</p>
         </div>
@@ -63,21 +55,21 @@ body {
   font-family: Arial, sans-serif;
   color: #333;
   line-height: 1.6;
+  background-color: #e0f7fa; /* Light blue background */
 }
 
 /* Header Section */
 header {
-  background: url('https://images.unsplash.com/photo-1593642532904-0d6a29b10f3b?crop=entropy&cs=tinysrgb&fit=max&ixid=M3wzNjYwM3wwfDF8c2VhY3J8Mnx8Y29tcGxldGVlZG5ldHxlbnwwfHx8fDE2Nzc2NzEyNjg&ixlib=rb-1.2.1&q=80&w=1080') no-repeat center center/cover;
+  background: #0288d1; /* Deep blue header background */
+  color: white;
   height: 50vh;
   text-align: center;
-  color: white;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .header-content {
-  text-align: center;
   padding: 20px;
 }
 
@@ -88,11 +80,13 @@ header {
 
 .header-content p {
   font-size: 1.2rem;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 /* Introduction Section */
 .intro {
-  background-color: #f4f4f4;
+  background-color: #81d4fa; /* Lighter blue background for contrast */
   padding: 40px;
   text-align: center;
 }
@@ -102,23 +96,19 @@ header {
   margin-bottom: 20px;
 }
 
-.intro .vue-logo {
-  width: 150px;
-  margin-bottom: 20px;
-}
-
 .intro p {
   font-size: 1.1rem;
-  max-width: 600px;
+  max-width: 800px;
   margin: 0 auto;
+  color: #333;
 }
 
-/* Images Section */
+/* Image Cards Section */
 .images {
   display: flex;
   justify-content: space-around;
   padding: 40px;
-  background-color: #ffffff;
+  background-color: #b3e5fc; /* Very light blue background */
 }
 
 .image-container {
@@ -128,32 +118,34 @@ header {
 }
 
 .image-card {
-  background-color: #f9f9f9;
+  background-color: #ffffff;
   text-align: center;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   width: 30%;
+  transition: transform 0.3s;
 }
 
-.image-card img {
-  width: 100%;
-  border-radius: 10px;
+.image-card:hover {
+  transform: scale(1.05);
 }
 
 .image-card h3 {
   margin-top: 15px;
+  font-size: 1.5rem;
+  color: #0288d1; /* Matching deep blue */
 }
 
 .image-card p {
   font-size: 1rem;
-  color: #777;
+  color: #555;
 }
 
 /* Footer Section */
 footer {
   text-align: center;
-  background-color: #333;
+  background-color: #0288d1; /* Deep blue background */
   color: white;
   padding: 20px;
   font-size: 0.9rem;
