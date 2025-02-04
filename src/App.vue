@@ -9,7 +9,8 @@
 
     <section class="intro">
       <div class="intro-content">
-        <img src="https://cdn.jsdelivr.net/gh/NULLhub/landingpage-assets/vue-logo.png" alt="Vue.js Logo" class="vue-logo"/>
+        <!-- Vue.js Logo from reliable CDN -->
+        <img src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.min.js" alt="Vue.js Logo" class="vue-logo"/>
         <h2>About Us</h2>
         <p>We combine the power of AI, scientific research, and Unix systems to drive innovation in machine learning and neurosymbolic AI. Explore our work and collaborate with us!</p>
       </div>
@@ -18,17 +19,20 @@
     <section class="images">
       <div class="image-container">
         <div class="image-card">
-          <img src="https://images.unsplash.com/photo-1546183995-22b60c607d2c?crop=entropy&cs=tinysrgb&fit=max&ixid=M3wzNjYwM3wwfDF8c2VhY3J8NXx8c2NpZW5jZXxlbnwwfHx8fDE2Nzc2NzE0NzE&ixlib=rb-1.2.1&q=80&w=1080" alt="Science"/>
+          <!-- Science image (reliable source) -->
+          <img src="https://via.placeholder.com/500x300?text=Science+Image" alt="Science"/>
           <h3>Science</h3>
           <p>Explore the latest in research and scientific development.</p>
         </div>
         <div class="image-card">
-          <img src="https://images.unsplash.com/photo-1606333653581-fbaaa073222f?crop=entropy&cs=tinysrgb&fit=max&ixid=M3wzNjYwM3wwfDF8c2VhY3J8Nnx8YXB8ZW58MHx8fHwxNjc3NjcxNzAw&ixlib=rb-1.2.1&q=80&w=1080" alt="AI"/>
+          <!-- AI image (reliable source) -->
+          <img src="https://via.placeholder.com/500x300?text=AI+Image" alt="AI"/>
           <h3>AI & Machine Learning</h3>
           <p>Building intelligent systems that learn and reason.</p>
         </div>
         <div class="image-card">
-          <img src="https://images.unsplash.com/photo-1618550423494-35eb31599cc7?crop=entropy&cs=tinysrgb&fit=max&ixid=M3wzNjYwM3wwfDF8c2VhY3J8OHx8dW5peCBjb21wdXRlcnxlbnwwfHx8fDE2Nzc2NzI3NzA&ixlib=rb-1.2.1&q=80&w=1080" alt="Unix"/>
+          <!-- Unix image (reliable source) -->
+          <img src="https://via.placeholder.com/500x300?text=Unix+Image" alt="Unix"/>
           <h3>Unix & Systems</h3>
           <p>Utilizing Unix to power high-performance computing systems.</p>
         </div>
