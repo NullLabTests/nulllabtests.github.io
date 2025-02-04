@@ -52,25 +52,18 @@ export default {
 }
 
 body {
-  font-family: Arial, sans-serif;
-  color: #333;
+  background-color: #000000;  /* Black background */
+  color: #00ff00;  /* Bright green text */
+  font-family: 'Courier New', monospace;  /* Terminal-like font */
   line-height: 1.6;
-  background-color: #e0f7fa; /* Light blue background */
 }
 
 /* Header Section */
 header {
-  background: #0288d1; /* Deep blue header background */
-  color: white;
-  height: 50vh;
+  background-color: #1c1c1c;  /* Dark grey header */
+  color: #00ff00;  /* Bright green text */
   text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.header-content {
-  padding: 20px;
+  padding: 40px;
 }
 
 .header-content h1 {
@@ -80,13 +73,11 @@ header {
 
 .header-content p {
   font-size: 1.2rem;
-  max-width: 800px;
-  margin: 0 auto;
 }
 
 /* Introduction Section */
 .intro {
-  background-color: #81d4fa; /* Lighter blue background for contrast */
+  background-color: #111111;  /* Dark background */
   padding: 40px;
   text-align: center;
 }
@@ -94,21 +85,22 @@ header {
 .intro h2 {
   font-size: 2rem;
   margin-bottom: 20px;
+  color: #00ff00;
 }
 
 .intro p {
   font-size: 1.1rem;
-  max-width: 800px;
+  max-width: 600px;
   margin: 0 auto;
-  color: #333;
+  color: #00ff00;
 }
 
-/* Image Cards Section */
+/* Images Section */
 .images {
   display: flex;
   justify-content: space-around;
   padding: 40px;
-  background-color: #b3e5fc; /* Very light blue background */
+  background-color: #1c1c1c;  /* Dark grey background */
 }
 
 .image-container {
@@ -118,35 +110,29 @@ header {
 }
 
 .image-card {
-  background-color: #ffffff;
+  background-color: #222222;  /* Slightly lighter grey */
   text-align: center;
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
   width: 30%;
-  transition: transform 0.3s;
-}
-
-.image-card:hover {
-  transform: scale(1.05);
 }
 
 .image-card h3 {
   margin-top: 15px;
-  font-size: 1.5rem;
-  color: #0288d1; /* Matching deep blue */
+  color: #00ff00;
 }
 
 .image-card p {
   font-size: 1rem;
-  color: #555;
+  color: #00ff00;
 }
 
 /* Footer Section */
 footer {
   text-align: center;
-  background-color: #0288d1; /* Deep blue background */
-  color: white;
+  background-color: #1c1c1c;
+  color: #00ff00;
   padding: 20px;
   font-size: 0.9rem;
 }
