@@ -11,9 +11,10 @@
       <div class="intro">
         <h2>Welcome to the Lab</h2>
         <p>
-          Explore our experiments in cyber-security, AI, and Unix tinkering. Our goal is to learn by doing—push the limits of technology, one project at a time.
+          Explore our experiments in cyber-security, AI, and Unix tinkering.
+          Our goal is to learn by doing—push the limits of technology, one project at a time.
         </p>
-        <button @click="toggleAnimation">Toggle Animation</button>
+        <button @click="toggleAnimation">Enter the Matrix</button>
       </div>
       <transition name="fade">
         <div v-if="showAnimation" class="animation-box">
@@ -33,28 +34,31 @@ export default {
   name: 'App',
   data() {
     return {
-      showAnimation: false
-    }
+      showAnimation: false,
+    };
   },
   methods: {
     toggleAnimation() {
       this.showAnimation = !this.showAnimation;
-    }
-  }
-}
+    },
+  },
+};
 </script>
 
 <style scoped>
-/* Global Reset */
+/* Ensure the entire browser pane is black */
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: #000;
+  height: 100%;
+}
+
+/* Global Styles */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-
-/* Ensure full height */
-html, body, #app {
-  height: 100%;
 }
 
 /* Root container styles */
@@ -63,6 +67,7 @@ html, body, #app {
   color: #00ff00;        /* Neon green text */
   font-family: 'Courier New', Courier, monospace;
   line-height: 1.6;
+  min-height: 100vh;
 }
 
 /* Header Styles */
@@ -70,7 +75,6 @@ header {
   background-color: #111;   /* Very dark grey */
   padding: 40px 20px;
   text-align: center;
-  overflow: hidden;
   position: relative;
 }
 
