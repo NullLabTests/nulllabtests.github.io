@@ -2,139 +2,89 @@
   <div id="app">
     <header>
       <div class="header-content">
-        <h1>Welcome to Null Lab Tests</h1>
-        <p>Your research hub for AI, Science, and Unix development.</p>
+        <h1>Null Lab: Tinker & Learn</h1>
+        <p>Explore, experiment, and push the boundaries of tech.</p>
       </div>
     </header>
 
     <section class="intro">
       <div class="intro-content">
-        <h2>About Us</h2>
-        <p>We combine the power of AI, scientific research, and Unix systems to drive innovation in machine learning and neurosymbolic AI. Explore our work and collaborate with us!</p>
+        <h2>About Null Lab</h2>
+        <p>We are a collective of tinkerers, learners, and builders. Dive into AI, Unix, and creative coding with interactive projects.</p>
+        <button @click="toggleAnimation">{{ animated ? 'Pause' : 'Animate' }}</button>
       </div>
     </section>
 
-    <section class="images">
-      <div class="image-container">
-        <div class="image-card">
-          <h3>Science</h3>
-          <p>Explore the latest in research and scientific development.</p>
-        </div>
-        <div class="image-card">
-          <h3>AI & Machine Learning</h3>
-          <p>Building intelligent systems that learn and reason.</p>
-        </div>
-        <div class="image-card">
-          <h3>Unix & Systems</h3>
-          <p>Utilizing Unix to power high-performance computing systems.</p>
-        </div>
+    <section class="interactive">
+      <div class="card" v-for="(item, index) in items" :key="index" :class="{ animated: animated }">
+        <h3>{{ item.title }}</h3>
+        <p>{{ item.description }}</p>
       </div>
     </section>
 
     <footer>
-      <p>&copy; 2025 Null Lab Tests | Built with Vue.js</p>
+      <p>&copy; 2025 Null Lab | Built with Vue.js</p>
     </footer>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'App',
+  data() {
+    return {
+      animated: false,
+      items: [
+        { title: 'AI & ML', description: 'Build intelligent and adaptive systems.' },
+        { title: 'Unix & Systems', description: 'Master the command line and low-level tinkering.' },
+        { title: 'Creative Coding', description: 'Explore generative art and interactive web experiences.' }
+      ]
+    };
+  },
+  methods: {
+    toggleAnimation() {
+      this.animated = !this.animated;
+    }
+  }
 };
 </script>
 
 <style scoped>
-/* Global Styles */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 body {
-  background-color: #000000;  /* Black background */
-  color: #00ff00;  /* Bright green text */
-  font-family: 'Courier New', monospace;  /* Terminal-like font */
-  line-height: 1.6;
+  background-color: #000;
+  color: #0f0;
+  font-family: 'Courier New', monospace;
+  text-align: center;
 }
 
-/* Header Section */
 header {
-  background-color: #1c1c1c;  /* Dark grey header */
-  color: #00ff00;  /* Bright green text */
-  text-align: center;
   padding: 40px;
+  background-color: #111;
 }
 
-.header-content h1 {
-  font-size: 3rem;
-  margin-bottom: 10px;
+button {
+  margin-top: 20px;
+  background: #0f0;
+  color: #000;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
 }
 
-.header-content p {
-  font-size: 1.2rem;
-}
-
-/* Introduction Section */
-.intro {
-  background-color: #111111;  /* Dark background */
-  padding: 40px;
-  text-align: center;
-}
-
-.intro h2 {
-  font-size: 2rem;
-  margin-bottom: 20px;
-  color: #00ff00;
-}
-
-.intro p {
-  font-size: 1.1rem;
-  max-width: 600px;
-  margin: 0 auto;
-  color: #00ff00;
-}
-
-/* Images Section */
-.images {
+.interactive {
   display: flex;
   justify-content: space-around;
   padding: 40px;
-  background-color: #1c1c1c;  /* Dark grey background */
 }
 
-.image-container {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-}
-
-.image-card {
-  background-color: #222222;  /* Slightly lighter grey */
-  text-align: center;
+.card {
+  background: #222;
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
-  width: 30%;
+  transition: transform 0.5s ease;
 }
 
-.image-card h3 {
-  margin-top: 15px;
-  color: #00ff00;
-}
-
-.image-card p {
-  font-size: 1rem;
-  color: #00ff00;
-}
-
-/* Footer Section */
-footer {
-  text-align: center;
-  background-color: #1c1c1c;
-  color: #00ff00;
-  padding: 20px;
-  font-size: 0.9rem;
+.animated {
+  transform: scale(1.1);
 }
 </style>
 
