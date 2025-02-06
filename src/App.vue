@@ -2,89 +2,168 @@
   <div id="app">
     <header>
       <div class="header-content">
-        <h1>Null Lab: Tinker & Learn</h1>
-        <p>Explore, experiment, and push the boundaries of tech.</p>
+        <h1>Null Lab Tests</h1>
+        <p>Tinkering. Learning. Innovating.</p>
       </div>
     </header>
 
-    <section class="intro">
-      <div class="intro-content">
-        <h2>About Null Lab</h2>
-        <p>We are a collective of tinkerers, learners, and builders. Dive into AI, Unix, and creative coding with interactive projects.</p>
-        <button @click="toggleAnimation">{{ animated ? 'Pause' : 'Animate' }}</button>
+    <section class="content">
+      <div class="intro">
+        <h2>Welcome to the Lab</h2>
+        <p>
+          Explore our experiments in cyber-security, AI, and Unix tinkering. Our goal is to learn by doing—push the limits of technology, one project at a time.
+        </p>
+        <button @click="toggleAnimation">Toggle Animation</button>
       </div>
-    </section>
-
-    <section class="interactive">
-      <div class="card" v-for="(item, index) in items" :key="index" :class="{ animated: animated }">
-        <h3>{{ item.title }}</h3>
-        <p>{{ item.description }}</p>
-      </div>
+      <transition name="fade">
+        <div v-if="showAnimation" class="animation-box">
+          <p>System Online. Running diagnostics...</p>
+        </div>
+      </transition>
     </section>
 
     <footer>
-      <p>&copy; 2025 Null Lab | Built with Vue.js</p>
+      <p>&copy; 2025 Null Lab Tests | Built with Vue.js</p>
     </footer>
   </div>
 </template>
 
 <script>
 export default {
+  name: 'App',
   data() {
     return {
-      animated: false,
-      items: [
-        { title: 'AI & ML', description: 'Build intelligent and adaptive systems.' },
-        { title: 'Unix & Systems', description: 'Master the command line and low-level tinkering.' },
-        { title: 'Creative Coding', description: 'Explore generative art and interactive web experiences.' }
-      ]
-    };
+      showAnimation: false
+    }
   },
   methods: {
     toggleAnimation() {
-      this.animated = !this.animated;
+      this.showAnimation = !this.showAnimation;
     }
   }
-};
+}
 </script>
 
 <style scoped>
-body {
-  background-color: #000;
-  color: #0f0;
-  font-family: 'Courier New', monospace;
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Ensure full height */
+html, body, #app {
+  height: 100%;
+}
+
+/* Root container styles */
+#app {
+  background-color: #000; /* Black background */
+  color: #00ff00;        /* Neon green text */
+  font-family: 'Courier New', Courier, monospace;
+  line-height: 1.6;
+}
+
+/* Header Styles */
+header {
+  background-color: #111;   /* Very dark grey */
+  padding: 40px 20px;
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.header-content h1 {
+  font-size: 3.5rem;
+  margin-bottom: 10px;
+  text-shadow: 0 0 10px #00ff00;
+  animation: glow 2s infinite alternate;
+}
+
+.header-content p {
+  font-size: 1.5rem;
+  text-shadow: 0 0 5px #00ff00;
+}
+
+/* Content Section */
+.content {
+  padding: 40px 20px;
   text-align: center;
 }
 
-header {
-  padding: 40px;
-  background-color: #111;
+.intro h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #00ff00;
 }
 
+.intro p {
+  font-size: 1.2rem;
+  max-width: 800px;
+  margin: 0 auto 20px auto;
+}
+
+/* Button styling */
 button {
-  margin-top: 20px;
-  background: #0f0;
-  color: #000;
   padding: 10px 20px;
+  background-color: #00ff00;
+  color: #000;
   border: none;
+  font-size: 1rem;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-.interactive {
-  display: flex;
-  justify-content: space-around;
-  padding: 40px;
+button:hover {
+  background-color: #00cc00;
 }
 
-.card {
-  background: #222;
+/* Animation Box */
+.animation-box {
+  margin-top: 20px;
   padding: 20px;
-  border-radius: 10px;
-  transition: transform 0.5s ease;
+  border: 2px solid #00ff00;
+  animation: borderPulse 1.5s infinite;
 }
 
-.animated {
-  transform: scale(1.1);
+/* Footer Styles */
+footer {
+  background-color: #111;
+  padding: 20px;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+/* Keyframes for glowing text */
+@keyframes glow {
+  from {
+    text-shadow: 0 0 5px #00ff00;
+  }
+  to {
+    text-shadow: 0 0 20px #00ff00;
+  }
+}
+
+/* Keyframes for pulsing border */
+@keyframes borderPulse {
+  0% {
+    border-color: #00ff00;
+  }
+  50% {
+    border-color: #00cc00;
+  }
+  100% {
+    border-color: #00ff00;
+  }
+}
+
+/* Fade transition for animation box */
+.fade-enter-active, .fade-leave-active {
+  transition: opacity 0.5s;
+}
+.fade-enter, .fade-leave-to {
+  opacity: 0;
 }
 </style>
 
